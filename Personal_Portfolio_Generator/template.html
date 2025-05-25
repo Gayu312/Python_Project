@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{{ name }} - Portfolio</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  
+  <!-- AOS CSS (Animate on Scroll) -->
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+</head>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f5f8fa;
+      color: #333;
+    }
+    .header {
+      background-color: #0d6efd;
+      color: white;
+      padding: 2rem;
+      text-align: center;
+      border-radius: 0 0 20px 20px;
+      margin-bottom: 2rem;
+    }
+    .section {
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    }
+    .skills span {
+      background-color: #e0e0e0;
+      margin: 5px;
+      padding: 6px 16px;
+      border-radius: 20px;
+      display: inline-block;
+    }
+    .project a {
+      text-decoration: none;
+      color: #0d6efd;
+      font-weight: 500;
+    }
+    .project a:hover {
+      text-decoration: underline;
+    }
+    footer {
+      text-align: center;
+      margin: 3rem 0 1rem;
+      font-size: 0.9rem;
+      color: #888;
+    }
+  </style>
+<body>
+
+  <div class="header" data-aos="zoom-in">
+    <h1>{{ name }}</h1>
+    <h4>{{ title }}</h4>
+
+    <div class="mt-3">
+  <a href="mailto:{{ contact.email }}" class="me-3 text-white text-decoration-none">
+    <i class="fas fa-envelope"></i> {{ contact.email }}
+  </a>
+  <a href="{{ contact.linkedin }}" target="_blank" class="me-3 text-white text-decoration-none">
+    <i class="fab fa-linkedin"></i> LinkedIn
+  </a>
+  <a href="{{ contact.github }}" target="_blank" class="text-white text-decoration-none">
+    <i class="fab fa-github"></i> GitHub
+  </a>
+</div>
+
+  </div>
+
+  <div class="container">
+    
+    <!-- About Section -->
+    <div class="section" data-aos="fade-up">
+      <h3>About Me</h3>
+      <p>{{ about }}</p>
+    </div>
+
+    <!-- Skills Section -->
+    <div class="section" data-aos="fade-up">
+      <h3>Skills</h3>
+      <div class="skills">
+        {% for skill in skills %}
+          <span>{{ skill }}</span>
+        {% endfor %}
+      </div>
+    </div>
+
+    <!-- Projects Section -->
+    <div class="section" data-aos="fade-up">
+      <h3>Projects</h3>
+      {% for project in projects %}
+        <div class="project mb-3">
+          <h5>{{ project.name }}</h5>
+          <p>{{ project.description }}</p>
+        </div>
+      {% endfor %}
+    </div>
+
+    <!-- Experience Section -->
+    <div class="section" data-aos="fade-up">
+      <h3>Experience</h3>
+      {% for exp in experience %}
+        <div class="mb-3">
+          <strong>{{ exp.role }}</strong> — {{ exp.company }} ({{ exp.period }})<br />
+          <p>{{ exp.details }}</p>
+        </div>
+      {% endfor %}
+    </div>
+
+    <!-- Education Section -->
+    <div class="section" data-aos="fade-up">
+      <h3>Education</h3>
+      {% for edu in education %}
+        <div class="mb-2">
+          <strong>{{ edu.degree }}</strong> — {{ edu.institution }} ({{ edu.year }})
+          <p>{{ edu.details }}</p>
+        </div>
+      {% endfor %}
+    </div>
+
+    <!-- Certifications Section -->
+    <div class="section" data-aos="fade-up">
+      <h3>Certifications</h3>
+      <ul>
+        {% for cert in certifications %}
+          <li><strong>{{ cert.name }}</strong> - {{ cert.issuer }} ({{ cert.year }})</li>
+        {% endfor %}
+      </ul>
+    </div>
+
+    <!-- Additional Information Section -->
+    <div class="section" data-aos="fade-up">
+  <h3>Additional Information</h3>
+  <ul>
+    {% for key, value in additional_info.items() %}
+      <li><strong>{{ key }}:</strong> {{ value }}</li>
+    {% endfor %}
+  </ul>
+</div>
+
+
+    <!-- Contact Section -->
+    <div class="section" data-aos="fade-up">
+      <h3>Contact</h3>
+      <ul class="list-unstyled">
+        <li><strong>Email:</strong> <a href="mailto:{{ contact.email }}">{{ contact.email }}</a></li>
+        <li><strong>LinkedIn:</strong> <a href="{{ contact.linkedin }}" target="_blank">{{ contact.linkedin }}</a></li>
+        <li><strong>GitHub:</strong> <a href="{{ contact.github }}" target="_blank">{{ contact.github }}</a></li>
+      </ul>
+    </div>
+
+  </div>
+
+  <footer>
+    &copy; {{ name }} - {{ title }}
+  </footer>
+
+  <!-- Bootstrap JS and AOS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 1000,
+      once: true
+    });
+  </script>
+
+</body>
+</html>

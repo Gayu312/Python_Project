@@ -1,0 +1,71 @@
+{
+  "name": "Joe Demo",
+  "title": "Full-Stack Developer",
+  "about": "I’m a passionate and detail-oriented full-stack developer with hands-on experience in building responsive websites.",
+  "skills": ["Python", "HTML", "CSS", "JavaScript", "PHP", "MySQL", "Django"],
+  "projects": [
+    {
+      "name": "E-commerce Website",
+      "description": "Developed a dynamic e-commerce website using PHP and MySQL."
+    },
+    {
+      "name": "Medical Supplies website",
+      "description": "Designed and developed the Medical Supplies website."
+    }
+  ],
+  "experience": [
+    {
+      "role": "Sofware Developer Intern",
+      "company": "ABC",
+      "period": "2024-2025",
+      "details": "Gained hands-on experience by contributing to real-world projects in web development."
+    }
+  ],
+  "education": [
+    {
+      "degree": "MSc CS",
+      "institution": "Abc University",
+      "year": "2024",
+      "details": "Specialized in data analysis."
+    },
+    {
+    "degree": "BSc cs",
+    "institution": "ABC",
+    "year": "2022",
+    "details": "Graduated with distinction."
+  },
+  {
+    "degree": "HSC",
+    "institution": "ABC School",
+    "year": "2019",
+    "details": "Completed Higher Secondary."
+  },
+  {
+    "degree": "SSLC",
+    "institution": "ABC School",
+    "year": "2017",
+    "details": "Completed SSLC with First Class."
+  }
+  ],
+  "certifications": [
+    {
+      "name": "Full-Stack Developer",
+      "issuer": "Udemy",
+      "year": "2025"
+    },
+    {
+      "name": "Java",
+      "issuer": "xyz",
+      "year": "2023"
+    }
+  ],
+  "additional_info": {
+   "Languages known": "English, Tamil"
+},
+  "contact": {
+  "email": "joe@example.com",
+  "linkedin": "https://linkedin.com/in/joe",
+  "github": "https://github.com/joe"
+}
+
+}
